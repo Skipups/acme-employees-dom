@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">Acme Employees DOM</div>
+        <div class="subHeader">Choose your three favorite employees.</div>
+        <div class="contentBox">
+        </div>
+        <div class="favorite">favorite</div>
+
+    </div>
+    <script>
+        
+        const contentBox = document.querySelector('.contentBox')
+        const favorite = []
+
+        const employees = [
+            { id: 1, name: 'moe'},
+            { id: 2, name: 'larry'},
+            { id: 4, name: 'shep'},
+            { id: 3, name: 'curly'},
+            { id: 5, name: 'groucho'},
+            { id: 6, name: 'harpo'},
+            { id: 8, name: 'shep Jr.'},
+            { id: 99, name: 'lucy'}
+        ];
+
+        employees.forEach((employee)=>{
+            const box = document.createElement('div')
+            box.classList.add('box')
+            contentBox.appendChild(box)
+            box.innerHTML = employee.name;
+            box.value = employee.id;
+            box.setAttribute("id", employee.id );
+
+            box.addEventListener('click',(e)=>{
+                if(favorite.length>2){
+                    window.alert("There is too many!")
+                    favorite = []
+                } else {
+                    console.log(favorite)
+                    favorite.push(e.target.id)
+                    box.style.backgroundColor = 'red'
+                    // box.classList.add('selectBox')
+                }
+            })
+        })
+
+        
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.container{
+    background-color: white;
+    height: 100vh;
+}
+
+.header{
+    padding: 1em;
+    font-size: 2em;
+}
+
+.subHeader{
+    padding: .5em;
+}
+
+.contentBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+
+.box{
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    border: .5em solid rgb(18, 107, 30);
+    margin: 1em;
+}
+
+.selectBox{
+    background-color: chartreuse;
+}
